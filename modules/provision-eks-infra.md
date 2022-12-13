@@ -19,9 +19,9 @@ aws ec2 create-subnet --region us-west-1 --vpc-id $vpc_c --cidr-block 10.2.1.0/2
 3- Create internet gw
 
 ```bash
-aws ec2 create-internet-gateway --region us-east-1 --query InternetGateway.InternetGatewayId --output text |read igw_a
-aws ec2 create-internet-gateway --region us-east-2 --query InternetGateway.InternetGatewayId --output text |read igw_b
-aws ec2 create-internet-gateway --region us-west-1 --query InternetGateway.InternetGatewayId --output text |read igw_c
+aws ec2 create-internet-gateway --region us-east-1 --query InternetGateway.InternetGatewayId --output text | read igw_a
+aws ec2 create-internet-gateway --region us-east-2 --query InternetGateway.InternetGatewayId --output text | read igw_b
+aws ec2 create-internet-gateway --region us-west-1 --query InternetGateway.InternetGatewayId --output text | read igw_c
 ```
 
 4- Attach the internet gateway to your VPC using the following attach-internet-gateway command.
@@ -34,9 +34,9 @@ aws ec2 attach-internet-gateway --region us-west-1 --vpc-id $vpc_c --internet-ga
 5- Create route table 
 
 ```bash
-aws ec2 create-route-table --region us-east-1 --vpc-id $vpc_a --query RouteTable.RouteTableId --output text |read rtb_a
-aws ec2 create-route-table --region us-east-2 --vpc-id $vpc_b --query RouteTable.RouteTableId --output text |read rtb_b
-aws ec2 create-route-table --region us-west-1 --vpc-id $vpc_c --query RouteTable.RouteTableId --output text |read rtb_c
+aws ec2 create-route-table --region us-east-1 --vpc-id $vpc_a --query RouteTable.RouteTableId --output text | read rtb_a
+aws ec2 create-route-table --region us-east-2 --vpc-id $vpc_b --query RouteTable.RouteTableId --output text | read rtb_b
+aws ec2 create-route-table --region us-west-1 --vpc-id $vpc_c --query RouteTable.RouteTableId --output text | read rtb_c
 ```
 
 6- Create a route in the route table that points all traffic (0.0.0.0/0) to the internet gateway using the following create-route command.
