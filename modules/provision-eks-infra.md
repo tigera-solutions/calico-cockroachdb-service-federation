@@ -107,12 +107,12 @@ chmod 400 MyKeyPairc.pem
 2- Create a security group in your VPC using the create-security-group command.
 
 ```bash
-aws ec2 create-security-group --region us-east-1 --group-name SSHAccess --description "Security group for SSH access" --vpc-id $vpc_a --query GroupId --output text | read sg_a
-aws ec2 authorize-security-group-ingress --region us-east-1 --group-id $sg_a --protocol tcp --port 22 --cidr 0.0.0.0/0
-aws ec2 create-security-group --region us-east-2 --group-name SSHAccess --description "Security group for SSH access" --vpc-id $vpc_b --query GroupId --output text | read sg_b
-aws ec2 authorize-security-group-ingress --region us-east-2 --group-id $sg_b --protocol tcp --port 22 --cidr 0.0.0.0/0
-aws ec2 create-security-group --region us-west-1 --group-name SSHAccess --description "Security group for SSH access" --vpc-id $vpc_c --query GroupId --output text | read sg_c
-aws ec2 authorize-security-group-ingress --region us-west-1 --group-id $sg_c --protocol tcp --port 22 --cidr 0.0.0.0/0
+aws ec2 create-security-group --region us-east-1 --group-name allow-all --description "Security group for any traffic" --vpc-id $vpc_a --query GroupId --output text | read sg_a
+aws ec2 authorize-security-group-ingress --region us-east-1 --group-id $sg_a --protocol all --port all --cidr 0.0.0.0/0
+aws ec2 create-security-group --region us-east-2 --group-name allow-all --description "Security group for any traffic" --vpc-id $vpc_b --query GroupId --output text | read sg_b
+aws ec2 authorize-security-group-ingress --region us-east-2 --group-id $sg_b --protocol all --port all --cidr 0.0.0.0/0
+aws ec2 create-security-group --region us-west-1 --group-name allow-all --description "Security group for any traffic" --vpc-id $vpc_c --query GroupId --output text | read sg_c
+aws ec2 authorize-security-group-ingress --region us-west-1 --group-id $sg_c --protocol all --port all --cidr 0.0.0.0/0
 ```
 
 3- Launch 3 instances into each region, using the security group and key pair you've created. 
