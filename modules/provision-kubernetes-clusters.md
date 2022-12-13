@@ -1,10 +1,13 @@
 In this section we will install kubeadm cluster in each region with calico CNI.
-you can follow the normal steps to install the kubeadm cluster on ubuntu https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+- floow the step in this document to install kubeadm cluster on each region with calico CNI
+https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart
 
-I used bash script to install kubadm with one command line as described in the folloing link: 
-https://github.com/JosephYostos/kubeadm-installation
+**Important**
+To avoid any IPs overlabing we need to set a differnt pod network cidr and service cidr in each cluster
+--pod-network-cidr
+--service-cidr Default
 
-make sure to edir the pod-network-cidr & service-cidr Default on each cluster
+make sure to edit the pod-network-cidr & service-cidr Default on each cluster
 
 Pod IP setup
 - Cluster A: 192.168.0.0/18
