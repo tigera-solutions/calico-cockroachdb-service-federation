@@ -3,6 +3,7 @@ Ensure pod-pod communication between clusters A (pod cidr 10.0.0.0/16), B (pod c
 **Make calico use IPIP when reaching remote pod network**
 Create following in each cluster (example is given for cluster A):
 
+
 ```bash
 apiVersion: crd.projectcalico.org/v1
 kind: IPPool
