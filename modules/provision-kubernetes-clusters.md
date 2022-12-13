@@ -1,5 +1,5 @@
 In this section we will install kubeadm cluster in each region with calico CNI.
-- floow the step in this document to install kubeadm cluster on each region with calico CNI
+- follow the step in this document to install kubeadm cluster on each region with calico CNI
 https://projectcalico.docs.tigera.io/getting-started/kubernetes/quickstart
 
 **Important**
