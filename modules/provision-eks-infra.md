@@ -123,3 +123,8 @@ aws ec2 run-instances --region us-east-2 --image-id ami-075c22873590ff2e0 --coun
 aws ec2 run-instances --region us-west-1 --image-id ami-0589688e8c6693946 --count 3 --instance-type m5.large --key-name MyKeyPairc --security-group-ids $sg_c --subnet-id $subnet_c
 ```
 
+4- When your instance is in the running state, you can connect to it using an SSH client on a Linux or Mac OS X computer by using the following command:
+
+```bash
+ssh -i "MyKeyPair.pem" ec2-user@instance-public-ip
+```
