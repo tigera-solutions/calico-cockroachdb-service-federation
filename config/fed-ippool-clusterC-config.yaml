@@ -1,0 +1,53 @@
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: fed-ipv4-clusterb
+spec:
+  # IPPool for remote cluster federated pod range
+  cidr: 192.168.64.0/18
+  ipipMode: Always
+  # vxlanMode: Always
+  # natOutgoing: true
+  natOutgoing: false
+  disabled: true
+  
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: fed-ipv4-clustera
+spec:
+  # IPPool for remote cluster federated pod range
+  cidr: 192.168.0.0/18
+  ipipMode: Always
+  # vxlanMode: Always
+  # natOutgoing: true
+  natOutgoing: false
+  disabled: true
+
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: fed-serviceips-clusterb
+spec:
+  # IPPool for remote cluster service range
+  cidr: 172.21.0.0/16
+  ipipMode: Always
+  # vxlanMode: Always
+  natOutgoing: false
+  disabled: true
+
+---
+apiVersion: projectcalico.org/v3
+kind: IPPool
+metadata:
+  name: fed-serviceips-clustera
+spec:
+  # IPPool for remote cluster service range
+  cidr: 172.20.0.0/16
+  ipipMode: Always
+  # vxlanMode: Always
+  natOutgoing: false
+  disabled: true
