@@ -1,2 +1,2 @@
 
-- [Module 1: Provision EKS Infra ](modules/provision-eks-infra.md)
+- [Module 1: Provision EKS Infrastructure ](modules/provision-eks-infra.md)
