@@ -16,7 +16,7 @@ IMPORTANT: In order to complete this module, you must have [Calico Cloud trial a
 
    ![expand-menu](../img/expand-menu.png)
 
-3. Join AKS cluster to Calico Cloud management plane.
+3. Join cluster to Calico Cloud management plane.
 
     Click the "Managed Cluster" in your left side of browser.
     ![managed-cluster](../img/managed-cluster.png)
@@ -24,10 +24,9 @@ IMPORTANT: In order to complete this module, you must have [Calico Cloud trial a
     Click on "connect cluster"
     ![connect-cluster](../img/connect-cluster.png)
 
-    choose AKS and click next
-    ![choose-aks](../img/choose-aks.png)
+    choose kubeadm and click next
 
-    Run installation script in your aks cluster, script should look similar to this
+    Run installation script in your cluster, script should look similar to this
 
     ![install-script](../img/script.png)
 
@@ -50,7 +49,7 @@ IMPORTANT: In order to complete this module, you must have [Calico Cloud trial a
                                  Dload  Upload   Total   Spent    Left  Speed
     100   365  100   365    0     0   1312      0 --:--:-- --:--:-- --:--:--  1312
     secret/api-key created
-    installer.operator.calicocloud.io/aks-calicocloud-repo created
+    installer.operator.calicocloud.io/clusterA-calicocloud-repo created
     ```
 
     Joining the cluster to Calico Cloud can take a few minutes. Meanwhile the Calico resources can be monitored until they are all reporting `Available` as `True`
@@ -88,4 +87,3 @@ IMPORTANT: In order to complete this module, you must have [Calico Cloud trial a
     kubectl patch felixconfiguration default -p '{"spec":{"flowLogsCollectTcpStats":true}}'
     ```
 
-[Next -> Module 2](../modules/configuring-demo-apps.md)
