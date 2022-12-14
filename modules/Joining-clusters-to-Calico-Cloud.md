@@ -1,4 +1,4 @@
-# Module 1: Joining clusters to Calico Cloud
+# Module 4: Joining clusters to Calico Cloud
 
 **Goal:** Join clusters to Calico Cloud management plane.
 
