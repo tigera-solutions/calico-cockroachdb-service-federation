@@ -1,0 +1,9 @@
+apiVersion: projectcalico.org/v3
+kind: RemoteClusterConfiguration
+metadata:
+  name: calico-cluster-b
+spec:
+  clusterAccessSecret:
+    name: remote-cluster-secret-cluster-b
+    namespace: calico-system
+    kind: Secret
