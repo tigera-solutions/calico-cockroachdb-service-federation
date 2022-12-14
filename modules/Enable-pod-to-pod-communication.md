@@ -1,8 +1,11 @@
-# Goal
+# Module 3: Enabling across clusters pod-to-pod communication
+
+
+**Goal:**
 
 Ensure pod-pod communication between clusters A (pod cidr 10.0.0.0/16), B (pod cidr 10.1.0.0/16) and C (pod cidr 10.2.0.0/16).
 
-# Configurations
+# Steps
 
 **Cluster A:**
 
