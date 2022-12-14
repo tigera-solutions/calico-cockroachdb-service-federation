@@ -1,0 +1,20 @@
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: remote-rr-clusterA
+spec:
+  nodeSelector: route-reflector == 'true'
+  # set IP of the remote route reflector to peer with
+  peerIP: 
+  asNumber: 64512
+---
+
+apiVersion: projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: remote-rr-clusterC
+spec:
+  nodeSelector: route-reflector == 'true'
+  # set IP of the remote route reflector to peer with
+  peerIP: 
+  asNumber: 64514
