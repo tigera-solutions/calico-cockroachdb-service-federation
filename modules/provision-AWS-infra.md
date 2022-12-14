@@ -1,5 +1,7 @@
 # Provision AWS Infrastracture
 
+   ![calico-cloud-login](../img/aws-design.png)
+   
 **Create VPCs and subnets** 
 
 1- Create vpc and save the vpc id to a virable 
