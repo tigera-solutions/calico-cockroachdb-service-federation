@@ -7,6 +7,7 @@ spec:
   # set IP of the remote route reflector to peer with
   peerIP: 
   asNumber: 64513
+  keepOriginalNextHop: true
 ---
 
 apiVersion: projectcalico.org/v3
@@ -18,3 +19,4 @@ spec:
   # set IP of the remote route reflector to peer with
   peerIP: 
   asNumber: 64514
+  keepOriginalNextHop: true
