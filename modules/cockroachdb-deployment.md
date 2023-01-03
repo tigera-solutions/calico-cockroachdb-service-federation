@@ -29,3 +29,4 @@ westus.svc.cluster.local:53 {       # <---- Modify
       }
 
 ```
+Apply the updated ConfigMaps to each of the clusters and the cluster should be established. 
