@@ -17,4 +17,4 @@ In this workshop we are going to focus on the following:
 - [Module 3: Enable across cluster pod-to-pod communication](modules/Enable-pod-to-pod-communication.md)
 - [Module 4: Joining clusters to Calico Cloud](modules/Joining-clusters-to-Calico-Cloud.md)
 - [Module 5: Federated endpoint identity](modules/federated-endpoint-identity.md)
-
+- [Module 6: CockroachDB Deployment Across Multiple Regions](modules/cockroachdb-deployment.md)
