@@ -9,7 +9,7 @@ Ensure pod-pod communication between clusters A (pod cidr 10.0.0.0/16), B (pod c
 
 **Cluster A:**
 
-- Create ip-ip ippoolswith the subnet of the other sites
+- Create ip-ip ippools with the subnet of the other sites
 ```bash
 kubectl apply -f config/fed-ippool-clusterA-config.yaml
 ```
