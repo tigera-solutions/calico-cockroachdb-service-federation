@@ -1,7 +1,7 @@
 apiVersion: projectcalico.org/v3
 kind: BGPPeer
 metadata:
-  name: remote-rr-clusterB
+  name: remote-rr-clusterb
 spec:
   nodeSelector: route-reflector == 'true'
   # set IP of the remote route reflector to peer with
@@ -13,7 +13,7 @@ spec:
 apiVersion: projectcalico.org/v3
 kind: BGPPeer
 metadata:
-  name: remote-rr-clusterC
+  name: remote-rr-clusterc
 spec:
   nodeSelector: route-reflector == 'true'
   # set IP of the remote route reflector to peer with
