@@ -53,8 +53,8 @@ kubeadm version
 sudo swapoff -a
 sudo kubeadm config images pull
 sudo kubeadm init \
-    --pod-network-cidr=192.168.0.0/18 \
-    --service-cidr=172.20.0.0/16 \
+    --pod-network-cidr=192.168.128.0/18 \
+    --service-cidr=172.22.0.0/16 \
     --apiserver-cert-extra-sans=127.0.0.1
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
