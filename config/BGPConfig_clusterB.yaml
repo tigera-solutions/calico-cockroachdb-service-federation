@@ -6,3 +6,5 @@ spec:
   asNumber: 64513
   logSeverityScreen: Info
   nodeToNodeMeshEnabled: false
+  serviceClusterIPs:
+  - cidr: 172.21.0.0/16
