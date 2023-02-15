@@ -33,7 +33,7 @@ install calico CNI (v3.22)
 
 ```bash
 kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
-kubectl create -f  https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-a.yaml
+kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-a.yaml
 ```
 
 ### worker
