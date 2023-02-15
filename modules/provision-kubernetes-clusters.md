@@ -24,15 +24,15 @@ Service IP setup
 
 ## Cluster A:
 
-### server (K8 v1.22.6)
+### server (K8 v1.25.6)
 
 ```bash
 curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-a.sh |bash
 ```
-install calico CNI (v3.22)
+install calico CNI (v3.24)
 
 ```bash
-kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-a.yaml
 ```
 
@@ -44,7 +44,7 @@ curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-servi
 
 ## Cluster B:
 
-### server (K8 v1.22.6)
+### server (K8 v1.25.6)
 
 ```bash
 curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-b.sh |bash
@@ -52,7 +52,7 @@ curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-servi
 install calico CNI (v3.22)
 
 ```bash
-kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-b.yaml
 ```
 
@@ -64,7 +64,7 @@ curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-servi
 
 ## Cluster C:
 
-### server (K8 v1.22.6)
+### server (K8 v1.25.6)
 
 ```bash
 curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-c.sh |bash
@@ -72,7 +72,7 @@ curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-servi
 install calico CNI (v3.22)
 
 ```bash
-kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.24.5/manifests/tigera-operator.yaml
 kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-c.yaml
 ```
 
