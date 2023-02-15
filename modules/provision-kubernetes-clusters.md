@@ -18,3 +18,66 @@ Service IP setup
 - Cluster A: 172.20.0.0/16
 - Cluster B: 172.21.0.0/16
 - Cluster C: 172.22.0.0/16
+
+
+======
+
+## Cluster A:
+
+### server (K8 v1.22.6)
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-a.sh |bash
+```
+install calico CNI (v3.22)
+
+```bash
+kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f  https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-a.yaml
+```
+
+### worker
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-worker.sh |bash
+```
+
+## Cluster B:
+
+### server (K8 v1.22.6)
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-b.sh |bash
+```
+install calico CNI (v3.22)
+
+```bash
+kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-b.yaml
+```
+
+### worker
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-worker.sh |bash
+```
+
+## Cluster C:
+
+### server (K8 v1.22.6)
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-master-c.sh |bash
+```
+install calico CNI (v3.22)
+
+```bash
+kubectl create -f https://projectcalico.docs.tigera.io/archive/v3.22/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/calico-custom-resources-c.yaml
+```
+
+### worker
+
+```bash
+curl https://raw.githubusercontent.com/tigera-solutions/calico-cockroachdb-service-federation/main/config/kubeadm-worker.sh |bash
+```
