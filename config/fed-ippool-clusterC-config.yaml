@@ -6,7 +6,7 @@ metadata:
 spec:
   cidr: 192.168.128.0/18
   ipipMode: Always
-  # vxlanMode: Always
+  vxlanMode: Never
   natOutgoing: true
 ---
 apiVersion: projectcalico.org/v3
