@@ -122,9 +122,9 @@ aws ec2 authorize-security-group-ingress --region us-west-1 --group-id $sg_c --p
 3- Launch 3 instances into each region, using the security group and key pair you've created. 
 
 ```bash
-aws ec2 run-instances --region us-east-1 --image-id ami-0bc7c87c6aee5963e --count 3 --instance-type m5.large --key-name MyKeyPaira --security-group-ids $sg_a --subnet-id $subnet_a
-aws ec2 run-instances --region us-east-2 --image-id ami-075c22873590ff2e0 --count 3 --instance-type m5.large --key-name MyKeyPairb --security-group-ids $sg_b --subnet-id $subnet_b
-aws ec2 run-instances --region us-west-1 --image-id ami-0589688e8c6693946 --count 3 --instance-type m5.large --key-name MyKeyPairc --security-group-ids $sg_c --subnet-id $subnet_c
+aws ec2 run-instances --region us-east-1 --image-id ami-0bc7c87c6aee5963e --count 4 --instance-type m5.large --key-name MyKeyPaira --security-group-ids $sg_a --subnet-id $subnet_a
+aws ec2 run-instances --region us-east-2 --image-id ami-075c22873590ff2e0 --count 4 --instance-type m5.large --key-name MyKeyPairb --security-group-ids $sg_b --subnet-id $subnet_b
+aws ec2 run-instances --region us-west-1 --image-id ami-0589688e8c6693946 --count 4 --instance-type m5.large --key-name MyKeyPairc --security-group-ids $sg_c --subnet-id $subnet_c
 ```
 
 4- When your instance is in the running state, you can connect to it using an SSH client on a Linux or Mac OS X computer by using the following command:
