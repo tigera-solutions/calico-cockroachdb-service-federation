@@ -113,7 +113,7 @@ https://docs.tigera.io/getting-started/kubernetes/installation/federation-remote
 - Create virables 
 ```bash
 CLUSTER=cluster-b
-YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system  $(kubectl get sa -n kube-system tigera-federation-remote-cluster -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token|base64decode}}')
+YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system tigera-federation-remote-cluster -o jsonpath='{.data.token}'|base64 --decode)
 YOUR_CERTIFICATE_AUTHORITY_DATA=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.certificate-authority-data}{"\n"}{end}')
 YOUR_SERVER_ADDRESS=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.server}{"\n"}{end}')
 ```
@@ -187,7 +187,7 @@ https://docs.tigera.io/getting-started/kubernetes/installation/federation-remote
 - Create virables 
 ```bash
 CLUSTER=cluster-c
-YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system  $(kubectl get sa -n kube-system tigera-federation-remote-cluster -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token|base64decode}}')
+YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system tigera-federation-remote-cluster -o jsonpath='{.data.token}'|base64 --decode)
 YOUR_CERTIFICATE_AUTHORITY_DATA=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.certificate-authority-data}{"\n"}{end}')
 YOUR_SERVER_ADDRESS=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.server}{"\n"}{end}')
 ```
