@@ -2,16 +2,6 @@
 apiVersion: projectcalico.org/v3
 kind: IPPool
 metadata:
-  name: default-ipv4-ippool
-spec:
-  cidr: 192.168.64.0/18
-  ipipMode: Always
-  vxlanMode: Never
-  natOutgoing: true
----
-apiVersion: projectcalico.org/v3
-kind: IPPool
-metadata:
   name: fed-ipv4-clustera
 spec:
   # IPPool for remote cluster federated pod range
