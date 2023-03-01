@@ -12,17 +12,34 @@ Configure a local cluster to pull endpoint data from a remote cluster. Federatin
 - Create RBAC
 ```bash
 kubectl apply -f \
-https://docs.tigera.io/getting-started/kubernetes/installation/federation-rem-rbac-kdd.yaml
+https://downloads.tigera.io/ee/v3.15.1/manifests/federation-rem-rbac-kdd.yaml
 ```
 - Apply the following manifest to create a service account
 ```bash
 kubectl apply -f \
-https://docs.tigera.io/getting-started/kubernetes/installation/federation-remote-sa.yaml
+https://downloads.tigera.io/ee/v3.15.1/manifests/federation-remote-sa.yaml
 ```
+
+- Create a secret for service Account manually.
+| NOTE:This step is needed if your k8s version is 1.24 or above. From K8s 1.24, K8s won’t generate Secrets automatically for ServiceAccounts and need be created manually. 
+
+```bash
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: tigera-federation-remote-cluster
+  namespace: kube-system
+  annotations:
+    kubernetes.io/service-account.name: "tigera-federation-remote-cluster"
+EOF
+```
+
 - Create virables 
 ```bash
 CLUSTER=cluster-a
-YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system  $(kubectl get sa -n kube-system tigera-federation-remote-cluster -o jsonpath='{range .secrets[*]}{.name}{"\n"}{end}' | grep token) -o go-template='{{.data.token|base64decode}}')
+YOUR_SERVICE_ACCOUNT_TOKEN=$(kubectl get secret -n kube-system tigera-federation-remote-cluster -o jsonpath='{.data.token}'|base64 --decode)
 YOUR_CERTIFICATE_AUTHORITY_DATA=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.certificate-authority-data}{"\n"}{end}')
 YOUR_SERVER_ADDRESS=$(kubectl config view --flatten --minify -o jsonpath='{range .clusters[*]}{.cluster.server}{"\n"}{end}')
 ```
