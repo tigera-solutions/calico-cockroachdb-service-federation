@@ -13,7 +13,7 @@ In this workshop we are going to focus on the following:
 ## Modules
 
 - [Module 1: Provision AWS Infrastructure ](modules/provision-AWS-infra.md)
-- [Module 2: Provision Kubernetes clusters with claico CNI](modules/provision-kubernetes-clusters.md)
+- [Module 2: Provision Kubernetes clusters with Calico CNI](modules/provision-kubernetes-clusters.md)
 - [Module 3: Enable across cluster pod-to-pod communication](modules/Enable-pod-to-pod-communication.md)
 - [Module 4: CockroachDB Deployment Across Multiple Regions](modules/cockroachdb-deployment.md)
 - [Module 5: Joining clusters to Calico Cloud](modules/Joining-clusters-to-Calico-Cloud.md)
